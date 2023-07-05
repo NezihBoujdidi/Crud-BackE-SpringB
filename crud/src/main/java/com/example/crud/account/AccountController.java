@@ -2,13 +2,14 @@ package com.example.crud.account;
 
 import com.example.crud.account.Account;
 import com.example.crud.account.AccountService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/Account")
+@RequestMapping("api/v1/account")
 public class AccountController {
     private final AccountService service;
 
@@ -43,6 +44,7 @@ public class AccountController {
         return service.update(Account);
     }
 
+    @Transactional
     @DeleteMapping("/{email}")
     public void delete(
             @PathVariable String email
