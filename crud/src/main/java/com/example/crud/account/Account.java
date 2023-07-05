@@ -1,18 +1,26 @@
-package com.example.crud.user;
+package com.example.crud.account;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-public class User {
+@Entity
+@Table
+public class Account {
+    @Id
+    @GeneratedValue // id auto generated
+    private Long id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
     private String password;
     private LocalDate dob;
 
-    public User() {
+    public Account() {
     }
 
-    public User(
+    public Account(
             String firstName,
             String lastName,
             String email,
@@ -58,6 +66,14 @@ public class User {
         this.password = password;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public LocalDate getDob() {
         return dob;
     }
@@ -68,7 +84,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Account{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

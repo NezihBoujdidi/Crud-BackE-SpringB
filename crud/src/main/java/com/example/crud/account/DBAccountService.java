@@ -1,28 +1,29 @@
-package com.example.crud.user;
+package com.example.crud.account;
 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DBUserService implements UserService{
+public class DBAccountService implements AccountService {
+
     @Override
-    public User save(User u) {
+    public Account save(Account u) {
         return null;
     }
 
     @Override
-    public List<User> getUsers() {
+    public List<Account> getAccounts() {
         return null;
     }
 
     @Override
-    public User update(User u) {
+    public Account update(Account u) {
         return null;
     }
 
     @Override
-    public User findUserByEmail(String email) {
+    public Account findAccountByEmail(String email) {
         return null;
     }
 
