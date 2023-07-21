@@ -17,6 +17,18 @@ public class Account {
     private String password;
     private LocalDate dob;
 
+    @Column(name = "image_id")
+    private Long imageId;
+    public Long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Long imageId) {
+        this.imageId = imageId;
+    }
+
+
+
     public Account() {
     }
 

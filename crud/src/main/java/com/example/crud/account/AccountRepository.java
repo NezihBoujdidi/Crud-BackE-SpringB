@@ -9,4 +9,6 @@ public interface AccountRepository
     Account findAccountByEmail(String email);
 
     void deleteAccountByEmail(String email);
+    void deleteAccountById(Long id);
+
 }
